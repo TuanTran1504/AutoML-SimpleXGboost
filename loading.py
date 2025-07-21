@@ -79,10 +79,10 @@ def pre_loading(train_path="train.csv", test_path=None):
         return None, None, None, None
 def check_data_loss(train_path="train.csv", test_path=None, num_method=None, cat_method=None, threshold=10): 
     try:
-        # Load train bắt buộc
+        # Load train
         train = pd.read_csv(train_path)
         before = len(train)
-        # Load test nếu có
+        # Load test 
         test = pd.read_csv(test_path) if test_path else None 
         numeric_cols = train.select_dtypes(include=["number"]).columns.tolist()
         categorical_cols = train.select_dtypes(include=["object", "category"]).columns.tolist()
@@ -131,7 +131,7 @@ def fill_numeric(df, method):
 
         # ---------- Process Categorical Columns ----------
 def fill_categorical(df, method):
-            # Check if DataFrame is empty
+    # Check if DataFrame is empty
     if df.empty or method =="None":
         return df
 
@@ -155,7 +155,7 @@ def fill_categorical(df, method):
         return df
 def loading(path="train.csv",feature_columns=None, num_method=None, cat_method=None, target_column=None, time_series=False, time_column=None, special_columns=None):
     try:
-        # Load train bắt buộc
+        # Load train
         train = pd.read_csv(path)
         if feature_columns:
             # Check if all selected features are in the DataFrame
