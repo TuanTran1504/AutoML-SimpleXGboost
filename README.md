@@ -52,5 +52,13 @@ If there is missing data, you will need to choose the methods
 Else you will go to the train model page  
 <img width="541" height="365" alt="image" src="https://github.com/user-attachments/assets/795a864d-9c52-4108-8fe9-ac567fec0c0f" />  
 
+Result we be shown after training  
+<img width="515" height="215" alt="image" src="https://github.com/user-attachments/assets/a0236551-8d36-4e21-85fc-82b52be67a9d" />  
+
+
+During the model-building process, errors may occur if the data is incompatible with the selected parameters or methods. In such cases, you'll need to adjust your choices and try again.
+
+
+
 
 
