@@ -19,3 +19,21 @@ Features
 🎯 Built-in hyperparameter optimization using Bayesian Search (BayesSearchCV)
 
 🧪 Integration-ready with GUI (e.g., Tkinter, Flask)
+
+
+Usage Instruction
+Clone the repo
+git clone https://github.com/TuanTran1504/AutoML-SimpleXGboost.git
+cd AutoML-SimpleXGboost
+
+🚀 Running the Flask Interface
+# 1 Create Virtual Environment
+python -m venv venv
+source venv/bin/activate        # macOS/Linux
+venv\Scripts\activate           # Windows
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the Flask app
+python interface.py
