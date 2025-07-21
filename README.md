@@ -41,5 +41,5 @@ pip install -r requirements.txt
 ```
 ```bash
 # 3. Run the Flask app
-python interface.py
+python app.py
 ```
