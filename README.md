@@ -44,13 +44,13 @@ pip install -r requirements.txt
 python app.py
 ```
 Continue with open your train file (test file is currently not supported)
-<img width="523" height="250" alt="image" src="https://github.com/user-attachments/assets/93591179-6157-4567-984d-e7a3f9021911" />
+<img width="523" height="250" alt="image" src="https://github.com/user-attachments/assets/93591179-6157-4567-984d-e7a3f9021911" />  
 
-If there is missing data, you will need to choose the methods
-<img width="499" height="229" alt="image" src="https://github.com/user-attachments/assets/1fd93464-ab37-47b7-be8c-95bc02665b2d" />
+If there is missing data, you will need to choose the methods  
+<img width="499" height="229" alt="image" src="https://github.com/user-attachments/assets/1fd93464-ab37-47b7-be8c-95bc02665b2d" />  
 
-Else you will go to the train model page
-<img width="541" height="365" alt="image" src="https://github.com/user-attachments/assets/795a864d-9c52-4108-8fe9-ac567fec0c0f" />
+Else you will go to the train model page  
+<img width="541" height="365" alt="image" src="https://github.com/user-attachments/assets/795a864d-9c52-4108-8fe9-ac567fec0c0f" />  
 
 
 
