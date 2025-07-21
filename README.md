@@ -23,17 +23,23 @@ Features
 
 Usage Instruction
 Clone the repo
+```bash
 git clone https://github.com/TuanTran1504/AutoML-SimpleXGboost.git
 cd AutoML-SimpleXGboost
+```
 
 🚀 Running the Flask Interface
+```bash
 # 1 Create Virtual Environment
 python -m venv venv
 source venv/bin/activate        # macOS/Linux
 venv\Scripts\activate           # Windows
-
+```
+```bash
 # 2. Install dependencies
 pip install -r requirements.txt
-
+```
+```bash
 # 3. Run the Flask app
 python interface.py
+```
