@@ -57,7 +57,7 @@ Result we be shown after training
 
 
 During the model-building process, errors may occur if the data is incompatible with the selected parameters or methods. In such cases, you'll need to adjust your choices and try again.
-
+Hope you will have a fun experience.
 
 
 
