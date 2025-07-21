@@ -1,0 +1,9 @@
+test/
+*.dll
+*.pyd
+*.so
+*.dylib
+__pycache__/
+venv/
+.env/
+Lib/

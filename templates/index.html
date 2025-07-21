@@ -1,0 +1,101 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ML Web App</title>
+</head>
+<body>
+  <h1>Machine Learning Web Interface</h1>
+
+  {% if stage == 'upload' %}
+    <h2>1. Upload Data</h2>
+    <form method="post" enctype="multipart/form-data">
+      <input type="hidden" name="stage" value="upload">
+      Train CSV: <input type="file" name="train_file" required><br>
+      Test CSV (optional): <input type="file" name="test_file"><br>
+      <button type="submit">Upload</button>
+    </form>
+
+  {% elif stage == 'imputation' %}
+    <h2>2. Handle Missing Data</h2>
+    <p>{{ missing }} found</p>
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+      <input type="hidden" name="stage" value="imputation">
+      <input type="hidden" name="train_path" value="{{ global_train_path }}">
+      <input type="hidden" name="test_path" value="{{ global_test_path }}">
+
+      <label>Numeric Imputation:</label>
+      <select name="num_method">
+        <option value="None">None</option>
+        <option value="mean">Mean</option>
+        <option value="median">Median</option>
+        <option value="zero">Zero</option>
+        <option value="drop">Drop rows</option>
+      </select><br>
+
+      <label>Categorical Imputation:</label>
+      <select name="cat_method">
+        <option value="None">None</option>
+        <option value="mode">Mode</option>
+        <option value="missing">Fill 'Missing'</option>
+        <option value="drop">Drop rows</option>
+      </select><br>
+
+      <button type="submit">Continue</button>
+    </form>
+
+  {% elif stage == 'target' %}
+    <h2>3. Select Target & Model</h2>
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+      <input type="hidden" name="stage" value="train">
+      <input type="hidden" name="train_path" value="{{ global_train_path }}">
+      <input type="hidden" name="test_path" value="{{ global_test_path }}">
+      <input type="hidden" name="num_method" value="{{ num_method }}">
+      <input type="hidden" name="cat_method" value="{{ cat_method }}">
+
+      <label>Target Column:</label>
+      <select name="target_column">
+        {% for col in columns %}
+          <option value="{{ col }}">{{ col }}</option>
+        {% endfor %}
+      </select><br>
+      <label>Feature Columns:</label>
+      <select name="feature_columns" multiple size="5">
+        {% for col in columns %}
+          <option value="{{ col }}">{{ col }}</option>
+        {% endfor %}
+      </select><br>
+      <label>Problem Type:</label>
+      <select name="problem_type">
+        <option value="regression">Regression</option>
+        <option value="binary">Binary Classification</option>
+        <option value="multiclass">Multi-class Classification</option>
+      </select><br>
+
+      <label>Time Series?</label>
+      <input type="checkbox" name="is_time_series"><br>
+      <label>Time Column:</label>
+      <select name="time_column">
+        <option value="">-- Select (if time series) --</option>
+        {% for col in columns %}
+        <option value="{{ col }}">{{ col }}</option>
+        {% endfor %}
+      </select><br>
+
+      <label>Iterations (BayesSearchCV):</label>
+      <input type="number" name="n_iter" value="20"><br>
+
+      <label>CV Folds:</label>
+      <input type="number" name="cv" value="3"><br>
+
+      <button type="submit">Train Model</button>
+    </form>
+
+  {% endif %}
+</body>
+</html>

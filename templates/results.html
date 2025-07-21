@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Training Results</title>
+</head>
+<body>
+  <h1>📊 Model Training Complete</h1>
+
+  <p><strong>Best CV‑score:</strong> {{ best_score }}</p>
+
+  {% if problem_type == 'regression' %}
+    <p><strong>Mean Absolute Error (MAE):</strong> {{ mae }}</p>
+    <p><strong>Mean Squared Error (MSE):</strong> {{ mse }}</p>
+  {% elif problem_type == 'binary' %}
+    <p><strong>ROC AUC:</strong> {{ roc_auc }}</p>\
+    {% if val_roc_auc %}
+      <p><strong>Validation ROC AUC:</strong> {{ val_roc_auc }}</p>
+    {% endif %}
+  {% elif problem_type == 'multiclass' %}
+    <p><strong>Accuracy:</strong> {{ accuracy }}</p>
+  {% endif %}
+
+  <p><a href="{{ url_for('index') }}">🡄 Back to start</a></p>
+</body>
+</html>
